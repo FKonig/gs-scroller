@@ -36,3 +36,8 @@
     position: relative;
   }
 
+  /* corrects offset in large tables */
+  .s101{
+  height: 11px;
+  }
+
