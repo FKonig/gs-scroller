@@ -66,7 +66,7 @@ def spreadsheet_selection(sid, gids):
 @temporary_cache(60*5)
 def convert_google_sheet(sid, gid):
     html = parse_google_document(
-        'https://docs.google.com/spreadsheets/d/{sid}/pubhtml/sheet?gid={gid}&range=1:69'
+        'https://docs.google.com/spreadsheets/d/{sid}/pubhtml/sheet?gid={gid}'
             .format(sid=sid, gid=gid),
         errhelp={'sid' : sid, 'gid' : gid} )
     for script in html.iter('script'):
@@ -104,7 +104,7 @@ SHEET_PATTERN = re.compile(
 @temporary_cache(60*5)
 def google_spreadsheet_data(sid):
     html = parse_google_document(
-        'https://docs.google.com/spreadsheets/d/{sid}/pubhtml?widget=true&range=1:69'
+        'https://docs.google.com/spreadsheets/d/{sid}/pubhtml?widget=true'
             .format(sid=sid),
         errhelp={'sid' : sid} )
 
